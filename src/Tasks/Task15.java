@@ -9,84 +9,31 @@ public class Task15 {
 
         System.out.println(getArr());
 
-
-
-
-//        for (String word : text) {
-//            if( word.equals(" ")){
-//                word.
-//            }
-//        }
-
-
-        // Implement your solution here
     }
-    public static String getString(){
+
+    public static String getString(){  // String from the user in lower case
         String text= scanner.nextLine();
         return text.toLowerCase();
     }
 
-    //    public static char getStringArr(){
-//        String text = getString().toLowerCase();
-//         char index = text.charAt(4);
-//         char comma = ',';
-//         char dot = '.';
-//        ArrayList<String> textArr= new ArrayList<>();
-//
-//        for ( int i=0; i < text.length();i++){
-//            if (text.substring(i).equalsIgnoreCase(",") || text.substring(i).equalsIgnoreCase(" ")||text.substring(i).equalsIgnoreCase(".")) {
-//                textArr.add(String.valueOf(text.indexOf(i)));
-//            }
-//        }
-//
-//
-//
-//         return index;
-//
-//    }
-
-
-    //    public static char getStringArr(){
-//        String text = getString().toLowerCase();
-//         char index = text.charAt(4);
-//         char comma = ',';
-//         char dot = '.';
-//        ArrayList<String> textArr= new ArrayList<>();
-//
-//        for ( int i=0; i < text.length();i++){
-//            if (text.substring(i).equalsIgnoreCase(",") || text.substring(i).equalsIgnoreCase(" ")||text.substring(i).equalsIgnoreCase(".")) {
-//                textArr.add(String.valueOf(text.indexOf(i)));
-//            }
-//        }
-//
-//
-//
-//         return index;
-//
-//    }
-
-    public static String getReplaceCommaDot(){
+    public static String getReplaceCommaDot(){  // replace comma and dot to space
         String text = getString();
         text = text.replace(","," ");
         text = text.replace(".", " ");
         return text;
     }
 
-    public static String[]  getStrArr(){
+    public static String[]  getStrArr(){    // create String Array
         String text = getReplaceCommaDot();
         String[] text1 = text.split(" ", text.length());
         return text1;
     }
 
-    public static List<String> getArr(){
+    public static List<String> getArr(){  // Make from an Array ArrayList and Iterator method to delete spaces
         String[] text = getStrArr();
         List<String> list = new ArrayList<>(Arrays.asList(text));
 
-//        for (String word : list) {
-//            if( word.name.equalsIgnoreCase(" ")){
-//                list.remove(word);
-//            }
-//        }
+
         Iterator<String> newStringArr = list.iterator();
         while (newStringArr.hasNext()){
             String i = newStringArr.next();
@@ -97,10 +44,5 @@ public class Task15 {
         return list;
     }
 
-
-// public static String[] getStrWhithoutSpace(){
-//        String[] text = getStrWwithoutComma();
-//        String[] text1 =
-// }
 //    Ala likes cats, but she is not liked by the Cats.
 }
