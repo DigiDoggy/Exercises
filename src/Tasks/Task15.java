@@ -1,6 +1,9 @@
 package Tasks;
 
+
+import java.sql.Array;
 import java.util.*;
+import java.util.function.BiConsumer;
 
 /*
 
@@ -19,19 +22,49 @@ public class Task15 {
         int[] count = new int[text.length];   //create an array for counting repetitions
 
 
-        for (int i = 0; i < text.length; i++) {          // Finding repeats.
+        List<String> textList = new ArrayList<>();
+        textList = Arrays.asList(text);
+        Collections.sort(textList);
+
+
+
+        for (int i = 0; i < textList.size(); i++) {          // Finding repeats.
             for (int j = 0; j < text.length; j++) {
-                if (text[i].equals(text[j])) {
+                if (text[i].equals(textList.get(j))) {
                     count[i] += 1;
                 }
+            }
+            for (String word: textList) {
+//                if(textList.get(i).equalsIgnoreCase(word)){
+//                }
+                if( word.equalsIgnoreCase(word));
+
             }
         }
 
 
-        for (int i = 0; i < text.length; i++) {                // bring out the solution
-            System.out.println(text[i] + " - " + count[i]);
+
+        for (int i = 0; i < textList.size(); i++) {                // bring out the solution
+            System.out.println(textList.get(i) + " - " + count[i]);
         }
     }
+//    public static TreeMap getResult(){
+//        String[] text= getArr();
+//
+//        Map<String, Integer> words = new TreeMap<>();
+//
+//        for (String word: text){
+//            Integer count = words.get(word);
+//            if(count!=null){
+//                count++;
+//            }else{
+//                count =1;
+//            }
+//words.put(word,count);
+//        }
+//
+//        words.forEach((key, val)) -> System.out.println(key + " - " +  val))
+//    }
 
     public static String getString() {  // String from the user in lower case
         String text = scanner.nextLine();
